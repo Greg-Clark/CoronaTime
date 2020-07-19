@@ -25,11 +25,11 @@ import java.util.Random;
 
 public class ItsCoronaTime extends Application {
 
-    private int moveSpeed = 10;
+    private int moveSpeed = 2;
     private Toiletpaper pelletArr[] = new Toiletpaper[212];
     private Image pelletImageArr[] = new Image[212];
     private ImageView pelletImageViewArr[] = new ImageView[212];
-    private final double gameTickSpeed = 0.1;
+    private final double gameTickSpeed = moveSpeed/100.0;
 
     private boolean hasPowerUp = false;
     private int timer = 0;
@@ -1458,7 +1458,7 @@ public class ItsCoronaTime extends Application {
                         ronaSadImageView4.setY(rona4.getY());
 
 
-                        if(timeCountUp % (gameTickSpeed*100) == 0)
+                        if(timeCountUp % (1/gameTickSpeed) == 0)
                         {
                             timer--;
                             displayHazmatTimer.setText("Time left for Hazmat: " + timer);
